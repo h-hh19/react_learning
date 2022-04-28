@@ -15,21 +15,18 @@
     
     <script type="text/babel">
         const root = document.getElementById("root")
-        const Title = <h3 
-        id="title" 
-        onMouseEnter={()=> console.log('mouse Enter')}>
-        Hello I'm a span
-        </h3>
-        const Button = <button 
-        style={{ 
-            backgroundColor: "navy"
-        }} 
-        onClick= {()=> console.log('im clicked')}>
-        Click me
-        </button>
-
-        const container = React.createElement("div", null, [Title, Button] )
-        ReactDOM.render(container, root)
+    
+        const App = ()=>{
+            const [counter, modifier] = React.useState(0);
+            
+            return(
+            <div>
+                <h3>Total click: {counter} </h3>
+                <button>Click me</button>
+            </div>
+            )
+        }
+            ReactDOM.render(<App />, root)
     </script>
 </body>
 </html>
